@@ -4,7 +4,7 @@
         <div class="bottom-menu">
 			<router-link class="menu-list" tag="div" to="/index">
 				<div class="menu-list-div">
-					<img src="./../../assets/index.png" alt="" class="bottom-img">
+					<i class="iconfont icon-shouye bottom-img"></i>
 					<span>首页</span>
 				</div>
 			</router-link>
@@ -15,7 +15,7 @@
 			</router-link>
 			<router-link class="menu-list" tag="div" to="/hot">
 				<div class="menu-list-div">
-					<img src="./../../assets/hot.png" alt="" class="bottom-img">
+					<i class="iconfont icon-redianshijian bottom-img"></i>
 					<span>热点</span>
 				</div>
 			</router-link>
@@ -23,8 +23,12 @@
     </div>
 </template>
 <script>
-	export default {
-
+	export default {	
+		data () {
+			return {
+				selectIndex: this.index
+			}
+		}
 	}
 </script>
 <style>
@@ -43,23 +47,24 @@
 		font-size:12px;
 		box-sizing:border-box;
 		padding:0 50px;
-		line-height:50px;
 		color:#2c2c2c;
 	}
 	.menu-list-div{
 		display:flex;
 		flex-direction:column;
 		justify-content:center;
-		line-height:100%;
-		padding-top:5px;
+		text-align: center;
+		line-height: 40px;
 	}
 	.bottom-img{
 		width:25px;
-		height:25px;
+		height:17px;
 	}
-	.bottom-mid{
-		width:30px;
-		height:30px;
+	.bottom-mid{    
+		width: 50px;
+		height: 50px;
+		position: relative;
+		bottom: 20px;
 	}
 	.router-link-active{
 		color:#d4237a;

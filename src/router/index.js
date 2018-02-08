@@ -28,12 +28,12 @@ export default new Router({
       },
       {
         // junior   初中第二个
-        path: '/junior/junior',
+        path: '/index/junior',
         component: junior
       },
       {
         // primary   小学第三个
-        path: '/primary/primary',
+        path: '/index/primary',
         component: primary
       }]
     },
@@ -46,6 +46,6 @@ export default new Router({
       // 底部三个的第三页
       path: '/hot',
       component: hot
-    },
+    }
   ]
 })

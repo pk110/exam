@@ -1,26 +1,37 @@
 <template>
 	<div class="common">
 		<div class="common-menu">
-			<img src="./../../assets/user.png" alt="" class="header">
-			<router-link class="menu-list" tag="div" to="/index">
+			<img src="./../../assets/user.png" alt="" class="header" @click="showUser">
+			<router-link class="menu-list" tag="div" to="/index" exact>
 				<div class="menu-list-div">高中</div>
 			</router-link>
-			<router-link class="menu-list" tag="div" to="/junior/junior">
+			<router-link class="menu-list" tag="div" to="/index/junior">
 				<div class="menu-list-div">初中</div>
 			</router-link>
-			<router-link class="menu-list" tag="div" to="/primary/primary">
+			<router-link class="menu-list" tag="div" to="/index/primary">
 				<div class="menu-list-div">小学</div>
 			</router-link>
 			<img src="./../../assets/menu.png" alt="" class="header">
 		</div>
-		<router-view></router-view>
+  		<transition     name="custom-classes-transition"
+    enter-active-class="animated slideInRight"
+    leave-active-class="animated slideInRight">
+			<router-view></router-view>
+		</transition>
 	</div>
 </template>
 <script>
     import Senior from './../Senior/Senior'
     import junior from './../junior/junior'
     import primary from './../primary/primary'
+	import store from './../../store/store'
+
     export default {
+		methods: {
+			showUser(){
+				return this.$store.state.slideBar.show = true;
+			}
+		},
 		components: {
 			Senior: Senior,
 			junior: junior,
