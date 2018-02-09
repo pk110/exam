@@ -6,6 +6,8 @@ import primary from './../components/primary/primary'
 import common from './../components/common/common'
 import study from './../components/study/study'
 import hot from './../components/hot/hot'
+import allSee from './../components/allSee/allSee'
+import news from './../components/news/news'
 
 Vue.use(Router)
 
@@ -44,8 +46,19 @@ export default new Router({
     },
     {
       // 底部三个的第三页
-      path: '/hot',
-      component: hot
+      path: '/hot/allSee',
+      component: hot,
+      //  菜单的router
+      children: [{
+        // allSee   热点第一个
+        path: '',
+        component: allSee
+      },
+      {
+        // news   热点第二个
+        path: '/hot/news',
+        component: news
+      }]
     }
   ]
 })

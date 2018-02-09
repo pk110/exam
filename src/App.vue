@@ -3,8 +3,7 @@
       <!--底部选项栏-->
       <bottom></bottom>
       <!--个人用户页面-->
-      <transition     name="custom-classes-transition"
-    :enter-active-class="show == true?'animated slideInUp':'animated slideInDown'">
+      <transition  name="sideUp">
         <user v-if="show"></user>
       </transition>
   </div>
@@ -39,6 +38,18 @@ export default {
         margin: 0;
         padding: 0;
         font-size:12px;
-        font-family: "Helvetica Condensed","微软雅黑","Microsoft Yahei",Helvetica,STHeiTi,sans-serif;
+        font-family: "微软雅黑","Microsoft Yahei",Helvetica,STHeiTi,sans-serif;
+    }
+    .clear{
+        clear:both;
+    }
+    /* 可以设置不同的进入和离开动画 */
+    /* 设置持续时间和动画函数 */
+    .sideUp-enter-to, .sideUp-leave-to{
+        transition: transform 0.3s
+    }
+    .sideUp-enter, .sideUp-leave-to
+    /* .slide-fade-leave-active for below version 2.1.8 */ {
+        transform:translate3d(0,100%,0)
     }
 </style>

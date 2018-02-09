@@ -10,10 +10,10 @@
 			</router-link>
 			<router-link class="menu-list" tag="div" to="/study">
 				<div class="menu-list-div">
-				 	<img src="./../../assets/study.png" alt="" class="bottom-mid">
+				 	<img src="./../../assets/study.png" alt="" :style="zIndex" class="bottom-mid">
 				</div>
 			</router-link>
-			<router-link class="menu-list" tag="div" to="/hot">
+			<router-link class="menu-list" tag="div" to="/hot/allSee">
 				<div class="menu-list-div">
 					<i class="iconfont icon-redianshijian bottom-img"></i>
 					<span>热点</span>
@@ -27,6 +27,11 @@
 		data () {
 			return {
 				selectIndex: this.index
+			}
+		},
+		computed:{
+			zIndex(){
+				return this.$store.state.slideBar.zIndex
 			}
 		}
 	}

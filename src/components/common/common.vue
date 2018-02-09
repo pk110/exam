@@ -1,7 +1,7 @@
 <template>
 	<div class="common">
 		<div class="common-menu">
-			<img src="./../../assets/user.png" alt="" class="header" @click="showUser">
+			<img src="./../../assets/user.png" alt="" class="header-user" @click="showUser">
 			<router-link class="menu-list" tag="div" to="/index" exact>
 				<div class="menu-list-div">高中</div>
 			</router-link>
@@ -11,12 +11,17 @@
 			<router-link class="menu-list" tag="div" to="/index/primary">
 				<div class="menu-list-div">小学</div>
 			</router-link>
-			<img src="./../../assets/menu.png" alt="" class="header">
+			<img src="./../../assets/menu.png" alt="" class="header" @click="showExam">
 		</div>
   		<transition     name="custom-classes-transition"
     enter-active-class="animated slideInRight"
     leave-active-class="animated slideInRight">
 			<router-view></router-view>
+		</transition>
+		<transition    name="custom-classes-transition"
+    enter-active-class="animated slideInRight"
+    leave-active-class="animated slideOutRight">
+			<allExam v-if="show_exam"></allExam>
 		</transition>
 	</div>
 </template>
@@ -24,18 +29,41 @@
     import Senior from './../Senior/Senior'
     import junior from './../junior/junior'
     import primary from './../primary/primary'
+    import allExam from './../allExam/allExam'
 	import store from './../../store/store'
 
     export default {
+		data () {
+			return {
+				
+			}
+		},
 		methods: {
 			showUser(){
-				return this.$store.state.slideBar.show = true;
+				store.dispatch({
+					type: 'showUser'
+				})
+			},
+			showExam(){
+				store.dispatch({
+					type: 'showExam'
+				})
+			}
+		},
+		computed:{
+			// 绑定vuex中的home里的sign值
+			show_exam () {
+				// 获取store里的state
+				// return this.$store.state.sign
+				// 这样获取子模块中的数据
+				return this.$store.state.slideBar.showExam
 			}
 		},
 		components: {
 			Senior: Senior,
 			junior: junior,
-			primary: primary
+			primary: primary,
+			allExam:allExam
 		}
     }
 </script>
@@ -62,5 +90,11 @@
 	.header{
 		width:25px;
 		height:25px;
+	}
+	.header-user{
+		width:25px;
+		height:25px;
+        border:1px solid #d4237a;
+        border-radius:100%;
 	}
 </style>
