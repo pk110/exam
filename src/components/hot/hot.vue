@@ -2,17 +2,16 @@
     <div class="hot">
         <div class="hot-head">
             <img src="./../../assets/user.png" alt=""  @click="showUser">
-            <router-link class="menu-list" tag="div" to="/hot/allSee" exact>
+            <router-link class="menu-list" tag="div" to="/hot/allSee" exact @click="showHot=!showHot">
                 都在看
             </router-link>			
-            <router-link class="menu-list" tag="div" to="/hot/news" style="padding-left:20%;">
+            <router-link class="menu-list" tag="div" to="/hot/news" style="padding-left:20%;" @click="showHot=!showHot">
                 热资讯
             </router-link>
         </div>
-  		<transition name="custom-classes-transition"
-    enter-active-class="animated slideInRight"
-    leave-active-class="animated slideInRight">
-			<router-view></router-view>
+  		<transition enter-active-class="animated slideInRight"
+    leave-active-class="animated slideOutLeft">
+			<router-view  v-show="showHot"></router-view>
 		</transition>
     </div>
 </template>
@@ -24,7 +23,8 @@
     export default {
         data () {
             return {
-
+                showHot:true,
+                isRouterAlive: true
             }
         },
         methods:{  
@@ -32,12 +32,21 @@
 				store.dispatch({
 					type: 'showUser'
 				})
-			}
+			},
+			fetchAllSeeData(){
+				store.dispatch({
+					type: 'fetchAllSeeData'
+				})
+			}  
         },
 		components: {
 			allSee: allSee,
 			news: news
-		}
+		},
+        watch: {
+          // 如果路由有变化，会再次执行该方法  检测路由变化
+        //   "$route": "fetchAllSeeData"
+        }
     }
 </script>
 <style>

@@ -13,13 +13,11 @@
 			</router-link>
 			<img src="./../../assets/menu.png" alt="" class="header" @click="showExam">
 		</div>
-  		<transition     name="custom-classes-transition"
-    enter-active-class="animated slideInRight"
+  		<transition enter-active-class="animated slideInRight"
     leave-active-class="animated slideInRight">
 			<router-view></router-view>
 		</transition>
-		<transition    name="custom-classes-transition"
-    enter-active-class="animated slideInRight"
+		<transition enter-active-class="animated slideInRight"
     leave-active-class="animated slideOutRight">
 			<allExam v-if="show_exam"></allExam>
 		</transition>

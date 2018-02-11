@@ -15,6 +15,22 @@ import user from './components/user/user.vue'
 import store from './store/store'
 
 export default {
+    data () {
+        return {
+            
+        }
+    },
+    methods:{
+        // 按需加载数据
+        // 1.加载都在看路由列表页
+        fetchAllSeeData(){
+            console.log(this)
+            // this.$get('http://me.mo4u.cn/content/newbie/index_10_1.json').then((res) {
+            //     console.log(res)
+            // }); 
+        }
+
+    },
     // animated slideInUp
     computed: {
         // 绑定vuex中的home里的sign值
@@ -25,11 +41,15 @@ export default {
             return this.$store.state.slideBar.show
         }
     },
-   components: {
-    //  底部选项栏
-     'bottom':bottom,
-     'user':user
-  }
+    components: {
+        //  底部选项栏
+        'bottom':bottom,
+        'user':user
+    },
+    created(){
+        //   共有数据写在这里直接加载
+        console.log('共有数据之间加载')
+    }
 }
 </script>
 

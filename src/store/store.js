@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import slideBar from './modules/slidebar'
+import hot from './modules/hot'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-      
+
   },
   getters: {
       
@@ -17,9 +18,9 @@ const store = new Vuex.Store({
   actions: {
 
   },
-
   modules: {
-    slideBar: slideBar
+    slideBar: slideBar,
+    hot:hot
   }
 })
 
