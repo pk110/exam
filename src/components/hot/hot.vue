@@ -2,17 +2,19 @@
     <div class="hot">
         <div class="hot-head">
             <img src="./../../assets/user.png" alt=""  @click="showUser">
-            <router-link class="menu-list" tag="div" to="/hot/allSee" exact @click="showHot=!showHot">
+            <router-link class="menu-list" tag="div" to="/hot" exact>
                 都在看
             </router-link>			
             <router-link class="menu-list" tag="div" to="/hot/news" style="padding-left:20%;" @click="showHot=!showHot">
                 热资讯
             </router-link>
         </div>
-  		<transition enter-active-class="animated slideInRight"
-    leave-active-class="animated slideOutLeft">
-			<router-view  v-show="showHot"></router-view>
-		</transition>
+		<v-touch class="touchComponent" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
+            <transition v-bind:enter-active-class="componentAnimated"
+        v-bind:leave-active-class="componentAnimated">
+                <router-view  v-show="showHot"></router-view>
+            </transition>
+		</v-touch>
     </div>
 </template>
 <script>
@@ -24,7 +26,8 @@
         data () {
             return {
                 showHot:true,
-                isRouterAlive: true
+                isRouterAlive: true,
+                componentAnimated:'animated slideInRight'
             }
         },
         methods:{  
@@ -37,7 +40,23 @@
 				store.dispatch({
 					type: 'fetchAllSeeData'
 				})
-			}  
+			},
+			onSwipeLeft(){
+				if(this.$route.path.split('/')[2] == undefined){
+					this.$router.push({path:'/hot/news'})
+				}else{
+					return;
+				}
+				this.componentAnimated = 'animated slideInRight'
+			},
+			onSwipeRight(){
+				if(this.$route.path.split('/')[2] == 'news'){
+					this.$router.push({path:'/hot'})
+				}else{
+					return;
+				}
+				this.componentAnimated = 'animated slideInLeft'
+			}
         },
 		components: {
 			allSee: allSee,
@@ -76,4 +95,10 @@
         position:absolute;
         left:15px;
     }
+	.touchComponent{
+		position:fixed;
+		top:50px;
+		bottom:51px;
+		width:100%;
+	}
 </style>

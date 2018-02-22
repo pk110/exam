@@ -35,7 +35,7 @@ export default new Router({
       },
       {
         // primary   小学第三个
-        path: '/index/primary',
+        path: '/index/primary/primary',
         component: primary
       }]
     },
@@ -46,12 +46,13 @@ export default new Router({
     },
     {
       // 底部三个的第三页
-      path: '/hot/allSee',
+      path: '',
       component: hot,
+      // 注意这里如果想换不同路由底部选项栏想一样 得保证在同一个根命下
       //  菜单的router
       children: [{
         // allSee   热点第一个
-        path: '',
+        path: '/hot',
         component: allSee
       },
       {

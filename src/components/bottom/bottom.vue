@@ -13,7 +13,7 @@
 				 	<img src="./../../assets/study.png" alt="" :style="zIndex" class="bottom-mid">
 				</div>
 			</router-link>
-			<router-link class="menu-list" tag="div" to="/hot/allSee">
+			<router-link class="menu-list" tag="div" to="/hot">
 				<div class="menu-list-div">
 					<i class="iconfont icon-redianshijian bottom-img"></i>
 					<span>热点</span>
@@ -59,7 +59,7 @@
 		flex-direction:column;
 		justify-content:center;
 		text-align: center;
-		line-height: 40px;
+		line-height: 49px;
 	}
 	.bottom-img{
 		width:25px;
@@ -73,5 +73,6 @@
 	}
 	.router-link-active{
 		color:#d4237a;
+    	transition: all 1s ease;
 	}
 </style>

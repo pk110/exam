@@ -2,8 +2,10 @@
     <div class="home">  
         <!--广告滚动-->
         <div class="advertisement">
-            <img src="./../../assets/sounce.png" alt="">
-            <p>小学在线观看考试教程，各种优惠等你来哦！</p>
+            <div>
+                <img src="./../../assets/sounce.png" alt="">
+                <p>小学在线观看考试教程，各种优惠等你来哦！</p>   
+            </div>
         </div>   
         <!--轮播图--> 
         <div class="swiper-container">
@@ -316,12 +318,9 @@ export default {
 
 <style scoped>
     .home{
-        position:fixed;
-        top:50px;
-        left:0;
-        right:0;
-        bottom:51px;
-        overflow:auto;
+        overflow: auto;
+        position: absolute;
+        width: 100%;
     }
    .swiper-container{
        width:100%;
@@ -340,11 +339,14 @@ export default {
    .advertisement{
         width: 100%;
         height: 30px;
+        box-sizing:border-box;
+        padding:0 15px;
+    }
+    .advertisement div{
+        width:100%;
         display:flex;
         flex-direction:row;
         align-items:center;
-        box-sizing:border-box;
-        padding:0 15px;
         overflow: hidden;
     }
     .advertisement p{
