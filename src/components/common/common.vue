@@ -23,16 +23,18 @@
 				<img src="./../../assets/loading.gif" alt="">
 				<span>内容正在加载...</span>
 			</div>
-			<v-touch class="touchComponent" :style="loading?'display:none':'display:block'" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
-				  <transition :name="touchSilder">
-						<router-view></router-view>	
+			<!--<v-touch class="touchComponent" :style="loading?'display:none':'display:block'" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">-->
+			<div class="touchComponent" :style="loading?'display:none':'display:block'"  @touchstart="sliderstart" @touchmove="slidermove" @touchend="sliderend">
+				<transition :name="touchSilder">
+					<router-view></router-view>	
 				</transition>
-			</v-touch>
-			<transition enter-active-class="animated slideInRight"
-		leave-active-class="animated slideOutRight">
-				<allExam v-if="show_exam"></allExam>
-			</transition>
+			</div>
+			<!--</v-touch>-->
 		</div>
+		<transition enter-active-class="animated slideInRight"
+	leave-active-class="animated slideOutRight">
+			<allExam v-if="show_exam"></allExam>
+		</transition>
 	</div>
 </template>
 <script>
@@ -49,7 +51,11 @@
 				left:"",
 				touchSilder:"",
 				loading:"",
-				type:true
+				type:true,
+				x1:"",
+				x2:"",
+				y1:"",
+				y2:""
 			}
 		},
 		methods: {
@@ -62,6 +68,26 @@
 				store.dispatch({
 					type: 'showExam'
 				})
+			},
+			sliderstart(event){
+				this.x1=event.targetTouches[0].pageX;
+				this.y1=event.targetTouches[0].pageY;
+			},
+			slidermove(event){
+				this.x2=event.targetTouches[0].pageX;
+				this.y2=event.targetTouches[0].pageY;
+			},
+			sliderend(){
+				var changeX = this.x2-this.x1;
+				var changeY = this.y2-this.y1;
+				if(Math.abs(changeX)>Math.abs(changeY)&&Math.abs(changeY)>5){
+				　　//左右事件
+					if(changeX > 0) {
+						this.onSwipeLeft()
+					}else{
+						this.onSwipeRight()
+					}
+				}
 			},
 			onSwipeLeft(){
 				this.type = false;

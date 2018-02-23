@@ -10,7 +10,7 @@
                     热资讯
                 </router-link>
             </div>
-            <div :class="bottomSlider" :style="left" class="bottom-slider"></div>
+            <div :class="bottomSlider" :style="left" class="bottom-slider-hot"></div>
         </div>
         <div class="box-loading" :style="loading?'display:inline-flex':'display:none'">
             <img src="./../../assets/loading.gif" alt="">
@@ -51,6 +51,7 @@
 				})
 			},
 			onSwipeLeft(){
+				this.type = false;
 				if(this.$route.path.split('/')[2] == undefined){
 					this.$router.push({path:'/hot/news'})
 				}else{
@@ -59,6 +60,7 @@
 				this.touchSilder = 'slide-left'
 			},
 			onSwipeRight(){
+				this.type = false;
 				if(this.$route.path.split('/')[2] == 'news'){
 					this.$router.push({path:'/hot'})
 				}else{
@@ -134,7 +136,7 @@
 		display:flex;
 		flex-direction:column;
 	}
-	.bottom-slider{
+	.bottom-slider-hot{
 		width:30%;
 		height:1px;
 		background:#d4237a;

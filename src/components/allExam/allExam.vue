@@ -111,7 +111,7 @@
         bottom:0;
         left:0;
         width:100%;
-        overflow:auto;
+        /*overflow:auto;*/
         background:#fff;
         z-index: 999;
     }
