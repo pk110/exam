@@ -32,6 +32,12 @@ import store from './../../store/store'
     }
 </script>
 <style>
+    .allSee{
+        overflow: auto;
+        position: absolute;
+        width: 100%;
+		transition: all .5s linear;
+    }
     .allSee ul li{
         list-style:none;
     }

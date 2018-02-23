@@ -15,6 +15,12 @@
     
 </script>
 <style>
+    .news{
+        overflow: auto;
+        position: absolute;
+        width: 100%;
+		transition: all .5s linear;
+    }
     .news ul li{
         list-style:none;
     }

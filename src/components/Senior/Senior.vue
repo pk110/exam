@@ -321,6 +321,7 @@ export default {
         overflow: auto;
         position: absolute;
         width: 100%;
+		transition: all .5s linear;
     }
    .swiper-container{
        width:100%;

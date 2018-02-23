@@ -25,7 +25,7 @@
 			</div>
 			<v-touch class="touchComponent" :style="loading?'display:none':'display:block'" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
 				  <transition :name="touchSilder">
-						<router-view class="child-view"></router-view>	
+						<router-view></router-view>	
 				</transition>
 			</v-touch>
 			<transition enter-active-class="animated slideInRight"
@@ -228,11 +228,6 @@
 		left:0;
 		width:100%;    
 		overflow-y: auto;
-	}
-	.child-view {
-		position: absolute;
-		width:100%;
-		transition: all .5s linear;
 	}
 	.slide-left-enter, .slide-right-leave-active {
 		-webkit-transform: translate3d(100%, 0,0);
