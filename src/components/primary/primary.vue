@@ -43,7 +43,7 @@
             <div class="living-bottom">
                 <ul>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -55,7 +55,7 @@
                         </div>
                     </li>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -67,7 +67,7 @@
                         </div>
                     </li>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -100,7 +100,7 @@
             <div class="living-bottom">
                 <ul>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -112,7 +112,7 @@
                         </div>
                     </li>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -124,7 +124,7 @@
                         </div>
                     </li>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -157,7 +157,7 @@
             <div class="living-bottom">
                 <ul>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -169,7 +169,7 @@
                         </div>
                     </li>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -181,7 +181,7 @@
                         </div>
                     </li>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -214,7 +214,7 @@
             <div class="living-bottom">
                 <ul>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -226,7 +226,7 @@
                         </div>
                     </li>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -238,7 +238,7 @@
                         </div>
                     </li>
                     <li>
-                        <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="" class="product-img">
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="" class="product-img">
                         <p class="product-title">标题标题考试考试考试直播直播教程教程</p>
                         <p class="product-people">200人购买</p>
                         <div class="product-bottom">
@@ -264,7 +264,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
     data () {
         return {
-            items:['http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658',
+            items:['https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539922263,2810970709&fm=200&gp=0.jpg',
             'http://img.hb.aicdn.com/68f1243c4d528bff8bc5916a4caf0dcb988b44db47985-LxOo2a_fw658',
             'http://img.hb.aicdn.com/7ea97310a262acbf48950c51ef1d97c9842a840f17ac3-eTgIHg_fw658'],
             swiperOption: {

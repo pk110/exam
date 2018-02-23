@@ -5,14 +5,13 @@
             <router-link class="menu-list" tag="div" to="/hot" exact>
                 都在看
             </router-link>			
-            <router-link class="menu-list" tag="div" to="/hot/news" style="padding-left:20%;" @click="showHot=!showHot">
+            <router-link class="menu-list" tag="div" to="/hot/news" style="padding-left:20%;">
                 热资讯
             </router-link>
         </div>
-		<v-touch class="touchComponent" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
-            <transition v-bind:enter-active-class="componentAnimated"
-        v-bind:leave-active-class="componentAnimated">
-                <router-view  v-show="showHot"></router-view>
+		<v-touch class="touchComponentHot" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
+            <transition :name="touchSilder">
+                <router-view class="child-view"></router-view>
             </transition>
 		</v-touch>
     </div>
@@ -25,9 +24,8 @@
     export default {
         data () {
             return {
-                showHot:true,
                 isRouterAlive: true,
-                componentAnimated:'animated slideInRight'
+                touchSilder:""
             }
         },
         methods:{  
@@ -47,7 +45,7 @@
 				}else{
 					return;
 				}
-				this.componentAnimated = 'animated slideInRight'
+				this.touchSilder = 'slide-left'
 			},
 			onSwipeRight(){
 				if(this.$route.path.split('/')[2] == 'news'){
@@ -55,7 +53,7 @@
 				}else{
 					return;
 				}
-				this.componentAnimated = 'animated slideInLeft'
+				this.touchSilder = 'slide-right'
 			}
         },
 		components: {
@@ -95,10 +93,18 @@
         position:absolute;
         left:15px;
     }
-	.touchComponent{
+	.touchComponentHot{
 		position:fixed;
 		top:50px;
 		bottom:51px;
 		width:100%;
+	}
+	.slide-left-enter, .slide-right-leave-active {
+		-webkit-transform: translate3d(100%, 0,0);
+		transform: translate3d(100%, 0,0);
+	}
+	.slide-left-leave-active, .slide-right-enter {
+		-webkit-transform: translate3d(-100%, 0,0);
+		transform: translate3d(-100%, 0,0);
 	}
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="common">
+	<div>
 		<div class="common-menu">
 			<img src="./../../assets/user.png" alt="" class="header-user" @click="showUser">
 			<div class="header-all">
@@ -18,17 +18,21 @@
 			</div>
 			<img src="./../../assets/menu.png" alt="" class="header" @click="showExam">
 		</div>
-		<v-touch class="touchComponent" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
-			<!--<transition v-bind:enter-active-class="componentAnimated"
-		v-bind:leave-active-class="componentAnimated">-->
-			<transition :enter-active-class="transitionNameLeft" :leave-active-class="transitionNameRight">
-					<router-view></router-view>	
+		<div class="common">
+			<div class="box-loading" :style="loading?'display:inline-flex':'display:none'">
+				<img src="./../../assets/loading.gif" alt="">
+				<span>内容正在加载...</span>
+			</div>
+			<v-touch class="touchComponent" :style="loading?'display:none':'display:block'" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
+				  <transition :name="touchSilder">
+						<router-view class="child-view"></router-view>	
+				</transition>
+			</v-touch>
+			<transition enter-active-class="animated slideInRight"
+		leave-active-class="animated slideOutRight">
+				<allExam v-if="show_exam"></allExam>
 			</transition>
-		</v-touch>
-		<transition enter-active-class="animated slideInRight"
-    leave-active-class="animated slideOutRight">
-			<allExam v-if="show_exam"></allExam>
-		</transition>
+		</div>
 	</div>
 </template>
 <script>
@@ -41,11 +45,11 @@
     export default {
 		data () {
 			return {
-				componentAnimated:'animated slideInRight',
-            	transitionNameLeft:"", //绑定在组件上面的动效class
-				transitionNameRight:"",
 				bottomSlider:"",
-				left:""
+				left:"",
+				touchSilder:"",
+				loading:"",
+				type:true
 			}
 		},
 		methods: {
@@ -60,16 +64,18 @@
 				})
 			},
 			onSwipeLeft(){
+				this.type = false;
 				if(this.$route.path.split('/')[2] == undefined){
 					this.$router.push({path:'/index/junior'})
 				}else if(this.$route.path.split('/')[2] == 'junior'){
-					this.$router.push({path:'/index/primary'})
+					this.$router.push({path:'/index/primary/primary'})
 				}else{
 					return;
 				}
-				this.componentAnimated = 'animated slideInRight'
+				this.touchSilder = 'slide-left'
 			},
 			onSwipeRight(){
+				this.type = false;
 				if(this.$route.path.split('/')[2] == 'primary'){
 					this.$router.push({path:'/index/junior'})
 				}else if(this.$route.path.split('/')[2] == 'junior'){
@@ -77,7 +83,7 @@
 				}else{
 					return;
 				}
-				this.componentAnimated = 'animated slideInLeft'
+				this.touchSilder = 'slide-right'
 			}
 		},
 		computed:{
@@ -99,9 +105,18 @@
 			'$route' (to, from){
 				const toDepth = to.path.split('/').length
 				const fromDepth = from.path.split('/').length
-				this.transitionNameLeft = toDepth < fromDepth ? 'slide-left' : 'slide-right'
-				this.transitionNameRight = toDepth < fromDepth ? 'slide-right' : 'slide-left'
 				const num = Math.abs(fromDepth-toDepth)
+				// 点击与左右滑动的分类
+				if(this.type == true){
+					this.loading = true;
+					var that = this;
+					setTimeout(function(){
+						that.loading = false;
+					},1000)
+				}else{
+					this.type = true
+				}	
+				// 下横线滑动效果
 				if(toDepth < fromDepth){
 					this.bottomSlider = 'bottom-slider-left';
 					if(num == 2){
@@ -124,7 +139,6 @@
 						}
 						this.left = 'left:33.33%';
 					}
-
 				}
 			}
 		}
@@ -133,12 +147,15 @@
 <style>
     .common{
 		position:fixed;
-		top:0;
+		top:50px;
 		bottom:51px;
 		left:0;
 		width:100%;
+		overflow: auto;
 	}
 	.common-menu{
+		position: fixed;
+    	top: 0;
 		width:100%;
 		height:50px;
 		display:flex;
@@ -180,13 +197,29 @@
 		background:#d4237a;
 		position:relative;
 		left:0;
-		margin-left: 6%;
+		margin-left: 7%;
 	}
 	.bottom-slider-left{
 		transition:left 0.3s linear;
 	}
 	.bottom-slider-right{
 		transition:left 0.3s linear;
+	}
+	.box-loading{
+		position:fixed;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		text-align:center;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items: center;
+	}
+	.box-loading img{
+		width:20px;
+		height:20px;
 	}
 	.touchComponent{
 		position:fixed;
@@ -196,12 +229,17 @@
 		width:100%;    
 		overflow-y: auto;
 	}
-	.slide-left{
-		left:-100px;
-    	transition: all .3s ease;
+	.child-view {
+		position: absolute;
+		width:100%;
+		transition: all .5s linear;
 	}
-	.slide-right{
-		left:-100px;
-    	transition: all .3s ease;
+	.slide-left-enter, .slide-right-leave-active {
+		-webkit-transform: translate3d(100%, 0,0);
+		transform: translate3d(100%, 0,0);
+	}
+	.slide-left-leave-active, .slide-right-enter {
+		-webkit-transform: translate3d(-100%, 0,0);
+		transform: translate3d(-100%, 0,0);
 	}
 </style>

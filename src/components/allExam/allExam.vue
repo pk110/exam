@@ -113,6 +113,7 @@
         width:100%;
         overflow:auto;
         background:#fff;
+        z-index: 10;
     }
     .allExam-head{
         width:100%;
