@@ -2,7 +2,7 @@
     <div class="hot">
         <div class="header-all">
             <div class="hot-head">
-                <img src="./../../assets/user.png" alt=""  @click="showUser">
+                <img src="./../../assets/user.png" alt=""  @click="showSiger">
                 <router-link class="menu-list" tag="div" to="/hot" exact>
                     都在看
                 </router-link>			
@@ -40,6 +40,11 @@
             }
         },
         methods:{  
+			showSiger(){
+				store.dispatch({
+					type: 'showSiger'
+				})
+			},
 			showUser(){
 				store.dispatch({
 					type: 'showUser'
@@ -107,7 +112,6 @@
         position:fixed;
         top:0;
         bottom:51px;
-        left:0;
         width:100%;
         overflow:auto;
         background:#fff;

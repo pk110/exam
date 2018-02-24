@@ -3,7 +3,7 @@
         <!--头部-->
         <div class="siger-head">
             <div class="siger-head-body">
-                <div class="siger-head-body-top">
+                <div class="siger-head-body-top" @click="showUser">
                     <img src="./../../assets/header.png" alt="">
                     <span>背着吉他的蝙蝠侠</span>
                 </div>
@@ -72,6 +72,11 @@
             }
         },
         methods:{
+			showUser(){
+				store.dispatch({
+					type: 'showUser'
+				})
+			},
             hideSiger(){
                 return this.$store.state.slideBar.showSlider = false;
             }

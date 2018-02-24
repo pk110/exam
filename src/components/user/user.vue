@@ -79,7 +79,8 @@
         left:0;
         width:100%;
         overflow:auto;
-        background:#efefef;
+        background:#efefef;    
+        z-index: 2;
     } 
     .user-head{
         position:relative;

@@ -16,7 +16,7 @@
 				</div>
 				<div :class="bottomSlider" :style="left" class="bottom-slider"></div>
 			</div>
-			<img src="./../../assets/menu.png" alt="" class="header" @click="showUser">
+			<img src="./../../assets/menu.png" alt="" class="header" @click="showExam">
 		</div>
 		<div class="common">
 			<div class="box-loading" :style="loading?'display:inline-flex':'display:none'">
@@ -60,11 +60,6 @@
 			}
 		},
 		methods: {
-			showUser(){
-				store.dispatch({
-					type: 'showUser'
-				})
-			},
 			showSiger(){
 				store.dispatch({
 					type: 'showSiger'
