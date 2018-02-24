@@ -52,11 +52,11 @@
         <!--底部-->
         <div class="siger-foot">
             <div class="siger-foot-left">
-                <img src="./../../assets/set.png" alt="">
+                <img src="./../../assets/userset.png" alt="">
                 <span>设置</span>
             </div>
             <div class="siger-foot-right">
-                <img src="./../../assets/set.png" alt="">
+                <img src="./../../assets/night.png" alt="">
                 <span>夜间模式</span>
             </div>
         </div>
