@@ -1,5 +1,5 @@
 <template>
-    <div class="bottom">
+    <div class="bottom" :style="sliderBox">
 		<router-view></router-view>		
         <div class="bottom-menu">
 			<router-link class="menu-list" tag="div" to="/index">
@@ -32,6 +32,9 @@
 		computed:{
 			zIndex(){
 				return this.$store.state.slideBar.zIndex
+			},
+			sliderBox(){
+				return this.$store.state.slideBar.bottomLeft
 			}
 		}
 	}
@@ -46,13 +49,16 @@
 		border-top:1px solid #eeeeee;
 	}
 	.bottom-menu{
-		display:flex;
-		flex-direction:row;
-		justify-content:space-between;
-		font-size:12px;
-		box-sizing:border-box;
-		padding:0 50px;
-		color:#2c2c2c;
+		position: fixed;
+		width: 100%;
+		height: 50px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		box-sizing: border-box;
+		padding: 0 50px;
+		align-items: center;
+		font-size: 12px;
 	}
 	.menu-list-div{
 		display:flex;

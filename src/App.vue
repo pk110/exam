@@ -3,15 +3,24 @@
       <!--底部选项栏-->
       <bottom></bottom>
       <!--个人用户页面-->
+      <!--<transition enter-active-class="animated slideInLeft"
+leave-active-class="animated slideOutLeft">-->
+      <transition :name="sliderSiger">
+        <siger v-if="showSlider"></siger>
+      </transition>
+      <!--登录页面-->
       <transition  name="sideUp">
         <user v-if="show"></user>
       </transition>
+      <!--遮罩-->
+      <div class="box"  v-if="showBox" @click="hiddenSiger"></div>
   </div>
 </template>
 
 <script>
 import bottom from './components/bottom/bottom.vue'
 import user from './components/user/user.vue'
+import siger from './components/siger/siger.vue'
 import store from './store/store'
 
 export default {
@@ -28,6 +37,11 @@ export default {
             // this.$get('http://me.mo4u.cn/content/newbie/index_10_1.json').then((res) {
             //     console.log(res)
             // }); 
+        },
+        hiddenSiger(){
+            store.dispatch({
+                type: 'hiddenSiger'
+            })
         }
 
     },
@@ -39,12 +53,22 @@ export default {
             // return this.$store.state.sign
             // 这样获取子模块中的数据
             return this.$store.state.slideBar.show
+        },
+        showSlider () {
+            return this.$store.state.slideBar.showSlider
+        },
+        showBox(){
+            return this.$store.state.slideBar.box
+        },
+        sliderSiger(){
+            return this.$store.state.slideBar.sliderSiger
         }
     },
     components: {
         //  底部选项栏
         'bottom':bottom,
-        'user':user
+        'user':user,
+        'siger':siger
     },
     created(){
         //   共有数据写在这里直接加载
@@ -63,6 +87,30 @@ export default {
     .clear{
         clear:both;
     }
+    .box{
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background:rgba(0,0,0,0.5);
+    }
+	.slider-right-enter {
+		left:-80%;
+        transition:left .5s ease;
+	}
+	.slider-right-enter-to {
+		left:0;
+        transition:left .5s ease;
+	}
+	.slider-right-leave {
+		left:0;
+        transition:left .4s ease;
+	}
+	.slider-right-leave-to {
+		left:-80%;
+        transition:left .4s ease;
+	}
     /* 可以设置不同的进入和离开动画 */
     /* 设置持续时间和动画函数 */
     .sideUp-enter-to, .sideUp-leave-to{

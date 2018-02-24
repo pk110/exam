@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="common-menu">
-			<img src="./../../assets/user.png" alt="" class="header-user" @click="showUser">
+			<img src="./../../assets/user.png" alt="" class="header-user" @click="showSiger">
 			<div class="header-all">
 				<div class="header-all-head">
 					<router-link class="menu-list" tag="div" to="/index" exact>
@@ -16,7 +16,7 @@
 				</div>
 				<div :class="bottomSlider" :style="left" class="bottom-slider"></div>
 			</div>
-			<img src="./../../assets/menu.png" alt="" class="header" @click="showExam">
+			<img src="./../../assets/menu.png" alt="" class="header" @click="showUser">
 		</div>
 		<div class="common">
 			<div class="box-loading" :style="loading?'display:inline-flex':'display:none'">
@@ -26,7 +26,7 @@
 			<!--<v-touch class="touchComponent" :style="loading?'display:none':'display:block'" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">-->
 			<div class="touchComponent" :style="loading?'display:none':'display:block'"  @touchstart="sliderstart" @touchmove="slidermove" @touchend="sliderend">
 				<transition :name="touchSilder">
-					<router-view></router-view>	
+					<router-view :style="sliderBox"></router-view>	
 				</transition>
 			</div>
 			<!--</v-touch>-->
@@ -35,6 +35,7 @@
 	leave-active-class="animated slideOutRight">
 			<allExam v-if="show_exam"></allExam>
 		</transition>
+		
 	</div>
 </template>
 <script>
@@ -62,6 +63,11 @@
 			showUser(){
 				store.dispatch({
 					type: 'showUser'
+				})
+			},
+			showSiger(){
+				store.dispatch({
+					type: 'showSiger'
 				})
 			},
 			showExam(){
@@ -119,6 +125,9 @@
 				// return this.$store.state.sign
 				// 这样获取子模块中的数据
 				return this.$store.state.slideBar.showExam
+			},
+			sliderBox(){
+				return this.$store.state.slideBar.bottomLeft
 			}
 		},
 		components: {
