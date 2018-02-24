@@ -2,7 +2,7 @@
     <div class="news"> 
         <ul>
             <li>
-                <img src="http://img.hb.aicdn.com/e0e93f66b11fd0ff808c4d8f75f4129a14f5ced6162e3-YN1cGO_fw658" alt="">
+                <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2645597901,3299484952&fm=27&gp=0.jpg" alt="">
                 <div class="news-bottom"></div>
             </li>
             <li>
