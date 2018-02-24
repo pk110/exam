@@ -80,12 +80,12 @@
 			sliderend(){
 				var changeX = this.x2-this.x1;
 				var changeY = this.y2-this.y1;
-				if(Math.abs(changeX)>Math.abs(changeY)&&Math.abs(changeY)>5){
+				if(Math.abs(changeX)>Math.abs(changeY)&&Math.abs(changeY)>0||Math.abs(changeY)===0){
 				　　//左右事件
 					if(changeX > 0) {
-						this.onSwipeLeft()
-					}else{
 						this.onSwipeRight()
+					}else{
+						this.onSwipeLeft()
 					}
 				}
 			},
