@@ -14,7 +14,10 @@ const slideBar = {
 		zIndex:'z-index:0',
 		box:false,
 		bottomLeft:'',
-		sliderSiger:''
+		sliderSiger:'',
+		registerShow:false,
+		registerNextShow:false,
+		privateShow:false
 	},
 	mutations: {
 		showUser(state){

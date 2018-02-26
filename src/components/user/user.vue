@@ -1,61 +1,36 @@
 <template>
     <div class="user">
+        <img src="./../../assets/left.png" alt="" @click="hideUser" class="user-img">
+        <div class="clear"></div>
         <div class="user-head">
-            <div class="user-top">
-                <img src="./../../assets/set.png" alt="">
-                <img src="./../../assets/error.png" alt="" @click="hideUser">
+            <span>密码登录</span>
+            <img src="./../../assets/header.png" alt="">
+        </div>
+        <div class="user-body">
+            <div class="user-body-username">
+                <p>用户名</p>
+                <input type="text" name="username" placeholder="请输入手机号或者邮箱">
             </div>
-            <img src="./../../assets/header.png" alt=""  class="user-img">
-            <p class="user-name">背着吉他的蝙蝠侠</p>
-            <p class="user-money">金币余额：0.00</p>
-            <div class="user-recharge">
-                <img src="./../../assets/recharge.png" alt="">
-                <span>充值</span>
+            <div class="user-body-password">
+                <p>密码</p>
+                <input type="password" name="userpassword" placeholder="请输入密码">
             </div>
         </div>
-        <div class="user-message">
-            <div class="user-message-bar">
-                <img src="./../../assets/headImg.png" alt="">
-                <span>个人资料</span>
-            </div>
-            <div class="user-message-bar">
-                <img src="./../../assets/orders.png" alt="">
-                <span>订单管理</span>
-            </div>
-            <div class="user-message-bar">
-                <img src="./../../assets/collect.png" alt="">
-                <span>收藏</span>
-            </div>
+        <div class="user-login">
+            <div class="user-login-box">登录</div>
         </div>
-        <div class="user-face">
-            <div class="user-lesson-title">面授服务</div>
-            <div class="user-face-container">
-                <div class="user-face-left">
-                    <img src="./../../assets/face.png" alt="">
-                    <div class="user-face-lesson">面授课程></div>
-                </div>
-                <div class="user-face-right">
-                    <img src="./../../assets/user.png" alt="">
-                    <span>学员认证</span>
-                </div>
-            </div>
+        <div class="user-register">
+            <div class="user-register-box" @click="showRegister">注册领取免费教程</div>
         </div>
-        <div class="user-lesson">
-            <div class="user-lesson-title">课程管理</div>
-            <div class="user-lesson-container">
-                <div class="user-lesson-box">
-                    <img src="./../../assets/lesson.png" alt="">
-                    <span>我的课程</span>
-                </div>
-                <div class="user-lesson-box" style="margin-left:20px;">
-                    <img src="./../../assets/plan.png" alt="">
-                    <span>学习计划</span>
-                </div>
-            </div>
-        </div>
+        <div class="user-forget">忘记密码?</div>
+        <!--注册页面-->
+        <transition name="sideUp">
+            <register v-if="registerShow"></register>
+        </transition>
     </div>
 </template>
 <script>
+    import register from './../register/register.vue'
 	import store from './../../store/store'
 
     export default {
@@ -67,11 +42,29 @@
         methods:{
             hideUser(){
                 return this.$store.state.slideBar.show = false;
+            },
+            showRegister(){
+                return this.$store.state.slideBar.registerShow = true;
             }
+        },
+        computed:{
+            registerShow(){
+                return this.$store.state.slideBar.registerShow
+            }
+        },
+        components:{
+            'register':register
         }
     }
 </script>
 <style>
+    .user-img{
+        width:20px;
+        height:20px;
+        float:left;
+        margin-left:15px;
+        margin-top:20px;
+    }
     .user{
         position:fixed;
         top:0;
@@ -79,143 +72,91 @@
         left:0;
         width:100%;
         overflow:auto;
-        background:#efefef;    
+        background:#fff;    
         z-index: 2;
     } 
     .user-head{
-        position:relative;
-        width:100%;
-        height:30vh;
-        background:url(./../../assets/background.jpg) no-repeat;
-        background-size:cover;
-        color:#fff;
-        text-align:center;
-    }
-    .user-top{
-        width:100%;
 		box-sizing:border-box;
 		padding:15px;
 		display:flex;
 		flex-direction:row;
 		justify-content:space-between;
-
+        align-items:flex-end;
+        margin-bottom: 20px;
     }
-    .user-top img{
-        width:20px;
-        height:20px;
+    .user-head img{
+        width:36px;
+        height:36px;
     }
-    .user-img{
-        width:50px;
-        height:50px;
-        border:1px solid #fff;
-        border-radius:100%;
-        padding: 1px;
+    .user-head span{
+        font-size: 14px;
+        font-weight: 600;
     }
-    .user-message{
-        width:100%;
-        height:60px;
-        margin-bottom:15px;
-		display:flex;
-		flex-direction:row;
-		justify-content:space-between;
-        background:#fff;
-    }
-    .user-message-bar{
-        width:30%;
-        height:60px;
-		display:flex;
-		flex-direction:column;
-		justify-content:center;
-        align-items:center;
-    }
-    .user-message-bar img{
-        width:20px;
-        height:20px;
-        padding-bottom:5px;
-    }
-    .user-lesson{
-        background:#fff;
+    .user-body{
         box-sizing:border-box;
-        padding:0 15px 15px 15px;
+        padding:0 15px;
+        color:#000;
     }
-    .user-lesson-container{
+    .user-body-username{
 		display:flex;
-		flex-direction:row;
-		justify-content:flex-start;
         align-items:center;
-    }
-    .user-lesson-title{
         width:100%;
-        height:40px;
-        line-height:40px;
-        font-size:15px;
-        color:gray;
-    }
-    .user-lesson-box{
-		display:flex;
-		flex-direction:column;
-		justify-content:center;
-        align-items:center;
-    }
-    .user-lesson-box img{
-        width:20px;
-        height:20px;
-        padding-bottom:5px;
-    }
-    .user-face{
-        background:#fff;
-        box-sizing:border-box;
-        padding:0 15px 15px 15px;
+        border-bottom:1px solid #8a8a8a;
         margin-bottom:15px;
     }
-    .user-face-container{
-		display:flex;
-		flex-direction:row;
-		justify-content:space-between;
-        align-items:center;
+    .user-body-username p{
+        width:20%;
     }
-    .user-face-left{
-		display:flex;
-		flex-direction:row;
-		justify-content:flex-start;
-        align-items:center;
-    }
-    .user-face-left img{
-        width:50px;
+    .user-body-username input{
+        flex:1;
+        color:#8a8a8a;
+        border:0;
         height:50px;
     }
-    .user-face-lesson{
-        color:#d4237a;
-        border:1px solid #d4237a;
-        padding:1px 3px;
-        border-radius:5px;
-    }
-    .user-face-right{
+    .user-body-password{
 		display:flex;
-		flex-direction:column;
-		justify-content:center;
         align-items:center;
+        width:100%;
+        border-bottom:1px solid #8a8a8a;
+        margin-bottom:15px;
     }
-    .user-face-right img{
-        width:30px;
-        height:30px;
+    .user-body-password p{
+        width:20%;
     }
-    .user-recharge{
+    .user-body-password input{
+        flex:1;
+        color:#8a8a8a;
+        border:0;
+        height:50px;
+    }
+    .user-login{
+        box-sizing:border-box;
+        padding:15px;
+    }
+    .user-login-box{
+        width:100%;
+        height:35px;
+        background:#FF7F50;
+        text-align:center;
+        line-height:35px;
+        color:#fff;
+    }
+    .user-register{
+        box-sizing:border-box;
+        padding:15px;
+    }
+    .user-register-box{
+        width:100%;
+        height:35px;
+        text-align:center;
+        line-height:35px;
+        color:#000;
+        border:1px solid #8a8a8a;
+    }
+    .user-forget{
         position:absolute;
-        bottom:10px;
-        right:0;
-		display:flex;
-		flex-direction:row;
-		justify-content:center;
-        align-items:center;
-        padding:2px 10px;
-        border-top-left-radius:10px;
-        border-bottom-left-radius:10px;
-        background:rgba(0,0,0,0.5);
-    }
-    .user-recharge img{
-        width:15px;
-        height:15px;
-        margin-right:3px;
+        bottom:20px;
+        right:15px;
+        color:#8a8a8a;
     }
 </style>
