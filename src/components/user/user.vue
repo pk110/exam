@@ -9,15 +9,15 @@
         <div class="user-body">
             <div class="user-body-username">
                 <p>用户名</p>
-                <input type="text" name="username" placeholder="请输入手机号或者邮箱">
+                <input type="text" name="username" placeholder="请输入手机号或者邮箱" ref="username">
             </div>
             <div class="user-body-password">
                 <p>密码</p>
-                <input type="password" name="userpassword" placeholder="请输入密码">
+                <input type="password" name="userpassword" placeholder="请输入密码" ref="password">
             </div>
         </div>
         <div class="user-login">
-            <div class="user-login-box">登录</div>
+            <div class="user-login-box" @click="login">登录</div>
         </div>
         <div class="user-register">
             <div class="user-register-box" @click="showRegister">注册领取免费教程</div>
@@ -32,6 +32,7 @@
 <script>
     import register from './../register/register.vue'
 	import store from './../../store/store'
+    import {delCookie,getCookie,setCookie} from './../../util/util'
 
     export default {
         data () {
@@ -45,6 +46,16 @@
             },
             showRegister(){
                 return this.$store.state.slideBar.registerShow = true;
+            },
+            login(){
+                console.log(this.$refs.password.value)
+                console.log(this.$refs.username.value)
+                if(this.$refs.password.value == 1234567 && this.$refs.username.value == '背着吉他的蝙蝠侠'){
+                        alert('登录成功')
+                        setCookie('username',this.$refs.username.value,1000)
+                }else{
+                    alert('输入不正确')
+                }
             }
         },
         computed:{
