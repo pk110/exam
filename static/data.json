@@ -1,0 +1,116 @@
+{
+    "finger": [
+        {
+            "document": {
+                "productGallery": "open/20171227/20171227-fa93a1cb-bbee-4521-9566-32420c46a45b.jpg,open/20171227/20171227-46e73435-7ca6-499f-a4cd-47776de713cb.png",
+                "praiseCount": "0",
+                "viewUrl": "/content/onlyvip/P5101986.shtml",
+                "ShufflingFigure": "false",
+                "productSmallImage": "/file/open/20180206/20180206-f1d6f662-197e-4d7f-be37-c18f324b92f3.jpg",
+                "readCount": "59",
+                "title": "《千与千寻》指弹演奏教学视频",
+                "uuid": "1442",
+                "favoriteCount": "0",
+                "commentCount": "8"
+            },
+            "buy_money": 0.1,
+            "vipFree": "2"
+        },
+        {
+            "document": {
+                "productGallery": "open/20171227/20171227-1ffa8740-2fae-4e5c-bfa9-3b54e654c492.jpg,open/20171227/20171227-fea076a9-cced-4000-935e-4c6d4d426cd6.png",
+                "praiseCount": "0",
+                "viewUrl": "/content/vip/P5101985.shtml",
+                "ShufflingFigure": "false",
+                "productSmallImage": "/file/open/20180206/20180206-e06323c1-159b-4d5c-a5cf-f44d867e0763.jpg",
+                "readCount": "33",
+                "title": "岸部真明《奇迹的山》演奏教学视频",
+                "uuid": "1441",
+                "favoriteCount": "1",
+                "commentCount": "6"
+            },
+            "buy_money": 0.1,
+            "vipFree": "0"
+        },
+        {
+            "document": {
+                "productGallery": "open/20171221/20171221-2f3a7670-553e-4117-ab54-d12a627000ef.jpg",
+                "praiseCount": "0",
+                "viewUrl": "/content/onlyvip/P5101969.shtml",
+                "ShufflingFigure": "false",
+                "productSmallImage": "/file/open/20180206/20180206-dd1c10da-854d-4f89-adf7-09fb24910e2f.jpg",
+                "readCount": "10",
+                "title": "平凡之路VIP教学",
+                "uuid": "1425",
+                "favoriteCount": "0",
+                "commentCount": "0"
+            },
+            "buy_money": 20,
+            "vipFree": "1"
+        },
+        {
+            "document": {
+                "productGallery": null,
+                "praiseCount": "0",
+                "viewUrl": "/content/finger/primary/P5101961.shtml",
+                "ShufflingFigure": "false",
+                "productSmallImage": "/file/open/20180206/20180206-75f53bd4-c8ed-4243-80fe-a3cd4ada9e60.jpg",
+                "readCount": "43",
+                "title": "sharp cs 内文手型",
+                "uuid": "1405",
+                "favoriteCount": "0",
+                "commentCount": "0"
+            },
+            "buy_money": 0,
+            "vipFree": "0"
+        },
+        {
+            "document": {
+                "productGallery": "open/20171025/20171025-5a48cb4e-4a6a-4ae6-8865-0ce9676a7ce5.jpg,open/20171025/20171025-27639897-15fa-4ce7-9f59-881563232f43.png",
+                "praiseCount": "0",
+                "viewUrl": "/content/finger/primary/P5101960.shtml",
+                "ShufflingFigure": "false",
+                "productSmallImage": "/file/open/20180206/20180206-18f41675-6ac6-4d5b-8775-72a9f9fd4c75.jpg",
+                "readCount": "56",
+                "title": "sharp cs 视频",
+                "uuid": "1404",
+                "favoriteCount": "0",
+                "commentCount": "0"
+            },
+            "buy_money": 0,
+            "vipFree": "0"
+        },
+        {
+            "document": {
+                "productGallery": null,
+                "praiseCount": "0",
+                "viewUrl": "/content/finger/primary/P5101957.shtml",
+                "ShufflingFigure": "false",
+                "productSmallImage": "/file/open/20180206/20180206-24e55c65-8a1f-4929-ad16-6c73f354487a.jpg",
+                "readCount": "18",
+                "title": "sharp cs 指弹曲",
+                "uuid": "1401",
+                "favoriteCount": "0",
+                "commentCount": "0"
+            },
+            "buy_money": 0,
+            "vipFree": "0"
+        },
+        {
+            "document": {
+                "productGallery": null,
+                "praiseCount": "0",
+                "viewUrl": "/content/finger/primary/P5101956.shtml",
+                "ShufflingFigure": "false",
+                "productSmallImage": "/file/open/20180206/20180206-f1d6f662-197e-4d7f-be37-c18f324b92f3.jpg",
+                "readCount": "18",
+                "title": "sharp cs内文会动",
+                "uuid": "1400",
+                "favoriteCount": "0",
+                "commentCount": "0"
+            },
+            "buy_money": 0,
+            "vipFree": "0"
+        }
+    ]
+}

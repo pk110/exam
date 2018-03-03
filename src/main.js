@@ -7,10 +7,16 @@ import router from './router'
 import store from './store/store'
 import {post,fetch,patch,put} from './http/http'
 import VueTouch from 'vue-touch'
+import global_ from './util/util'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 // Vue.use(VueAwesomeSwiper)
 Vue.use(VueTouch, {name: 'v-touch'})
+
+// 根地址
+Vue.prototype.GLOBAL = global_;
+// axios.defaults.baseURL=global_.BASE_URL;
 
 Vue.prototype.$post = post;
 Vue.prototype.$fetch = fetch;

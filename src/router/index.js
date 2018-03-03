@@ -8,6 +8,7 @@ import study from './../components/study/study'
 import hot from './../components/hot/hot'
 import allSee from './../components/allSee/allSee'
 import news from './../components/news/news'
+import newslistDetail from './../components/newslistDetail/newslistDetail'
 import {delCookie,getCookie,setCookie} from './../util/util'
 
 Vue.use(Router)
@@ -68,7 +69,13 @@ const router =  new Router({
         name:'news',
         component: news
       }]
-    }
+    },
+    {
+      // 底部三个的第三页里的列表详情页
+      path: '/newslistDetail',
+      name:'newslistDetail',
+      component: newslistDetail
+    },
   ]
 })
 

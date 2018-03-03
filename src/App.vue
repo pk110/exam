@@ -33,10 +33,14 @@ export default {
         // 按需加载数据
         // 1.加载都在看路由列表页
         fetchAllSeeData(){
-            console.log(this)
-            // this.$get('http://me.mo4u.cn/content/newbie/index_10_1.json').then((res) {
-            //     console.log(res)
-            // }); 
+            // console.log(this) 
+            // axios.get('./../static/data.json')
+            //     .then(function (response) {
+            //         console.log(response);
+            //     })
+            //     .catch(function (error) {
+            //         console.log(error);
+            // });
         },
         hiddenSiger(){
             store.dispatch({
@@ -71,8 +75,20 @@ export default {
         'siger':siger
     },
     created(){
+        var that = this;
         //   共有数据写在这里直接加载
-        console.log('共有数据之间加载')
+        console.log('共有数据之间加载');
+        // 全局变量引用
+        console.log(that.$fetch)
+        const data = {
+            'stuId': 1,
+            'begin': '1'
+        }
+        that.$fetch('./../static/data.json',data)
+            .then(function (res) {  
+                console.log(res);
+                that.$store.state.newslist.newslist  = res  
+            }); 
     }
 }
 </script>

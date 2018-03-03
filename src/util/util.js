@@ -22,3 +22,9 @@ export function delCookie (name) {
  if (cval != null)
   document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
 };
+
+// 根地址
+const BASE_URL = 'http://192.168.0.108:7878/';  
+export default{  
+  BASE_URL  
+}  

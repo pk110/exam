@@ -1,32 +1,38 @@
 <template>
     <div class="allSee"> 
         <ul>
-            <li>
-                <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=383438735,1962824552&fm=27&gp=0.jpg" alt="">
-                <div class="allSee-bottom"></div>
-            </li>
-            <li>
-                都在看
+            <li v-for="item in newslist.finger">
+                <router-link :to="{name:'newslistDetail',params:{ url:item.document.viewUrl}}">
+                    <img :src="['www.qixingyueqi.com'+item.document.productSmallImage]" alt="">
+                    <div class="allSee-bottom">{{item.document.title}}</div>
+                </router-link>
             </li>
         </ul>
     </div>
 </template>
 <script>	
-import store from './../../store/store'
+    import store from './../../store/store'
 
     export default {
 		data () {
 			return {
-				
+                
 			}
 		},
 		methods: {
 
         },
+        computed: {
+            newslist () {
+                console.log(this.$store.state.newslist.newslist)
+                return this.$store.state.newslist.newslist
+            }
+            
+        },
         created(){
             console.log('加载都在看数据app.vue里的fetchAllSeeData')
-            console.log(this.$root)
-            this.$root.fetchAllSeeData
+            // console.log(this.$root)
+            // this.$root.fetchAllSeeData
         }
 
     }
