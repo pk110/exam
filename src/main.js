@@ -16,7 +16,7 @@ Vue.use(VueTouch, {name: 'v-touch'})
 
 // 根地址
 Vue.prototype.GLOBAL = global_;
-// axios.defaults.baseURL=global_.BASE_URL;
+axios.defaults.baseURL=global_.BASE_URL;
 
 Vue.prototype.$post = post;
 Vue.prototype.$fetch = fetch;

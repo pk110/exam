@@ -84,7 +84,8 @@ export default {
             'stuId': 1,
             'begin': '1'
         }
-        that.$fetch('./../static/data.json',data)
+        // that.$fetch('./../static/data.json',data)
+        that.$fetch('/content/newbie/index_10_1.json',data)
             .then(function (res) {  
                 console.log(res);
                 that.$store.state.newslist.newslist  = res  

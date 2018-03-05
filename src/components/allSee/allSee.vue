@@ -1,10 +1,14 @@
 <template>
     <div class="allSee"> 
         <ul>
-            <li v-for="item in newslist.finger">
-                <router-link :to="{name:'newslistDetail',params:{ url:item.document.viewUrl}}">
-                    <img :src="['www.qixingyueqi.com'+item.document.productSmallImage]" alt="">
-                    <div class="allSee-bottom">{{item.document.title}}</div>
+            <li v-for="item in newslist.newsList">
+                <router-link :to="{name:'newslistDetail',params:{ url:item.viewUrl}}">
+                    <img :src="['www.qixingyueqi.com/file/'+item.documentDataMap.productSmallImage.dataValue]" alt="">
+                    <div class="allSee-bottom">{{item.title}}</div>
+                    <div class="allSee-left">
+                        <span>{{item.documentDataMap.productMarketPrice.dataValue}}</span>
+                        <span>{{item.publishTime}}</span>
+                    </div>
                 </router-link>
             </li>
         </ul>
@@ -42,10 +46,13 @@
         overflow: auto;
         position: absolute;
         width: 100%;
+        top:0;
+        bottom:0;
 		transition: all .5s linear;
     }
     .allSee ul li{
         list-style:none;
+        padding:0 15px;
     }
     .allSee ul li img{
         width:100%;
@@ -54,6 +61,19 @@
     .allSee-bottom{
         width:100%;
         height:30px;
-        background:red;
+        /*background:red;*/
+        padding-left:15px;
+    }
+    .allSee ul li a{
+        text-decoration:none;
+        color:#000;
+    }
+    .allSee-left{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        padding:0 15px;
+        margin-bottom:15px;
     }
 </style>

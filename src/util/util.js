@@ -24,7 +24,7 @@ export function delCookie (name) {
 };
 
 // 根地址
-const BASE_URL = 'http://192.168.0.108:7878/';  
+const BASE_URL = 'http://www.qixingyueqi.com';  
 export default{  
   BASE_URL  
 }  

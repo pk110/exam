@@ -10,6 +10,7 @@ import allSee from './../components/allSee/allSee'
 import news from './../components/news/news'
 import newslistDetail from './../components/newslistDetail/newslistDetail'
 import {delCookie,getCookie,setCookie} from './../util/util'
+import store from './../store/store'
 
 Vue.use(Router)
 
@@ -75,7 +76,7 @@ const router =  new Router({
       path: '/newslistDetail',
       name:'newslistDetail',
       component: newslistDetail
-    },
+    }
   ]
 })
 
@@ -89,8 +90,19 @@ router.beforeEach((to, from, next) => {
 
   //读取cookie，需要注意的是cookie是不能存中文的，如果需要存中文，解决方法是后端先进行编码encode()，前端取出来之后用decodeURI('string')解码。（安卓可以取中文cookie，IOS不行）
   console.log(getCookie('username'))
+  const nextRoute = ['newslistDetail'];
   if(getCookie('username') == null){
-    alert('需要拉起登录页面');
+    if(nextRoute.indexOf(to.name) > -1){
+      console.log('需要拉起登录页面');
+      store.dispatch({
+        type: 'showUser'
+      })
+      next(false);
+      // router.push({path:'/login'})
+    }else{
+      console.log('不需要拉去登录页面')
+      next();
+    }
   }
   // router.push({name:'hot'});
 
@@ -109,7 +121,6 @@ router.beforeEach((to, from, next) => {
   //     router.push({ name: 'home' });
   //   }
   // }
-  next();
 });
 
 export default router;
