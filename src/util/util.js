@@ -24,7 +24,7 @@ export function delCookie (name) {
 };
 
 // 根地址
-const BASE_URL = 'https://github.com/pk110/exam/blob/master/static';  
+const BASE_URL = 'http://www.qixingyueqi.com';  
 export default{  
   BASE_URL  
 }  

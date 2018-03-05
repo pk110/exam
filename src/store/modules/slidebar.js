@@ -17,7 +17,8 @@ const slideBar = {
 		sliderSiger:'',
 		registerShow:false,
 		registerNextShow:false,
-		privateShow:false
+		privateShow:false,
+		showUpdata:false
 	},
 	mutations: {
 		showUser(state){

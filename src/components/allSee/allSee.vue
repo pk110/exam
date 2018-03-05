@@ -1,12 +1,17 @@
 <template>
     <div class="allSee"> 
+        <div v-if="downUpdate" class="downUpdata">
+            <img src="./../../assets/loading.gif" alt="">
+            <span>内容加载中...</span>
+        </div>
         <ul>
             <li v-for="item in newslist.newsList">
                 <router-link :to="{name:'newslistDetail',params:{ url:item.viewUrl}}">
-                    <img :src="['www.qixingyueqi.com/file/'+item.documentDataMap.productSmallImage.dataValue]" alt="">
+                    <!--<img :src="['www.qixingyueqi.com/file/'+item.documentDataMap.productSmallImage.dataValue]" alt="">-->
+                    <img :src="item.documentDataMap.productSmallImage.dataValue" alt="">
                     <div class="allSee-bottom">{{item.title}}</div>
                     <div class="allSee-left">
-                        <span>{{item.documentDataMap.productMarketPrice.dataValue}}</span>
+                        <span>{{item.documentDataMap.productMarketPrice.dataValue}}元</span>
                         <span>{{item.publishTime}}</span>
                     </div>
                 </router-link>
@@ -30,8 +35,10 @@
             newslist () {
                 console.log(this.$store.state.newslist.newslist)
                 return this.$store.state.newslist.newslist
+            },
+            downUpdate(){
+                return this.$store.state.slideBar.showUpdata
             }
-            
         },
         created(){
             console.log('加载都在看数据app.vue里的fetchAllSeeData')
@@ -42,13 +49,30 @@
     }
 </script>
 <style>
+    .downUpdata{
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+    }
+    .downUpdata img{
+        margin-left:5px;
+        width:20px;
+        height:20px;
+    }
     .allSee{
-        overflow: auto;
-        position: absolute;
-        width: 100%;
-        top:0;
-        bottom:0;
+        overflow-y: auto;
+        /*position: fixed;
+        top:50px;
+        bottom:51px;
+        width: 100%;*/
 		transition: all .5s linear;
+    }
+    .allSee ul{
+        position: absolute;
+        overflow-y: auto;
+        width: 100%;
+        height: 100%;
     }
     .allSee ul li{
         list-style:none;
@@ -57,6 +81,7 @@
     .allSee ul li img{
         width:100%;
         height:200px;
+        border-radius:5px;
     }
     .allSee-bottom{
         width:100%;

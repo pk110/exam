@@ -84,11 +84,10 @@ export default {
             'stuId': 1,
             'begin': '1'
         }
-        // that.$fetch('./../static/data.json',data)
-        that.$fetch('/data.json',data)
+        that.$fetch('./../static/data.json',data)
             .then(function (res) {  
                 console.log(res);
-                that.$store.state.newslist.newslist  = res  
+                // that.$store.state.newslist.newslist  = res  
             }); 
     }
 }

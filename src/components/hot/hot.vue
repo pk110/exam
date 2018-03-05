@@ -1,27 +1,31 @@
 <template>
-    <div class="hot">
-        <div class="header-all">
-            <div class="hot-head">
-                <img src="./../../assets/user.png" alt=""  @click="showSiger">
-                <router-link class="menu-list" tag="div" to="/hot" exact>
-                    都在看
-                </router-link>			
-                <router-link class="menu-list" tag="div" to="/hot/news" style="padding-left:20%;">
-                    热资讯
-                </router-link>
-            </div>
-            <div :class="bottomSlider" :style="left" class="bottom-slider-hot"></div>
-        </div>
-        <div class="box-loading" :style="loading?'display:inline-flex':'display:none'">
-            <img src="./../../assets/loading.gif" alt="">
-            <span>内容正在加载...</span>
-        </div>
-		<v-touch class="touchComponentHot" :style="loading?'display:none':'display:block'" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
-            <transition :name="touchSilder">
-                <router-view></router-view>
-            </transition>
-		</v-touch>
-    </div>
+	<div>
+		<div class="hot">
+			<div class="header-all">
+				<div class="hot-head">
+					<img src="./../../assets/user.png" alt=""  @click="showSiger">
+					<router-link class="menu-list" tag="div" to="/hot" exact>
+						都在看
+					</router-link>			
+					<router-link class="menu-list" tag="div" to="/hot/news" style="padding-left:20%;">
+						热资讯
+					</router-link>
+				</div>
+				<div :class="bottomSlider" :style="left" class="bottom-slider-hot"></div>
+			</div>
+		</div>
+		<div class="hotcommon">
+			<div class="box-loading" :style="loading?'display:inline-flex':'display:none'">
+				<img src="./../../assets/loading.gif" alt="">
+				<span>内容正在加载...</span>
+			</div>
+			<v-touch class="touchComponentHot" :style="loading?'display:none':'display:block'" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight" v-on:swipeup="onSwipeUp" v-on:swipedown="onSwipeDown">
+				<transition :name="touchSilder">
+					<router-view :style="sliderBox"></router-view>
+				</transition>
+			</v-touch>
+		</div>
+	</div>
 </template>
 <script>
     import allSee from './../allSee/allSee'
@@ -72,8 +76,23 @@
 					return;
 				}
 				this.touchSilder = 'slide-right'
+			},
+			onSwipeUp(){
+				alert('上拉加载')
+			},
+			onSwipeDown(){
+				alert('下拉刷新')
+				this.$store.state.slideBar.showUpdata = true;
+				setTimeout(function(){
+					this.$store.state.slideBar.showUpdata = false;
+				},2000)
 			}
         },
+		computed:{
+			sliderBox(){
+				return this.$store.state.slideBar.bottomLeft
+			}
+		},
 		components: {
 			allSee: allSee,
 			news: news
@@ -108,6 +127,14 @@
     }
 </script>
 <style>
+	.hotcommon{
+		top: 50px;
+		bottom: 51px;
+		left: 0;
+		overflow: auto;    
+		position: fixed;
+		width: 100%;
+	}
     .hot{
         position:fixed;
         top:0;
@@ -175,6 +202,7 @@
 		top:50px;
 		bottom:51px;
 		width:100%;
+		overflow-y:auto;
 	}
 	.slide-left-enter, .slide-right-leave-active {
 		-webkit-transform: translate3d(100%, 0,0);
