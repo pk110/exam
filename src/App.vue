@@ -85,7 +85,7 @@ export default {
             'begin': '1'
         }
         // that.$fetch('./../static/data.json',data)
-        that.$fetch('/content/newbie/index_10_1.json',data)
+        that.$fetch('/data.json',data)
             .then(function (res) {  
                 console.log(res);
                 that.$store.state.newslist.newslist  = res  
